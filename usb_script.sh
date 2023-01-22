@@ -58,7 +58,7 @@ do
 		drive_directory=$temp_directory
 
 		#Mounts drive
-		sudo mount $drive_directory ~/Mounts > /dev/null 2>&1
+		sudo mount $drive_directory ~/Mounts/Mounted > /dev/null 2>&1
 		echo ""
 		echo "Operation complete."
 	
@@ -66,7 +66,7 @@ do
 	elif [ $command_input = "dmount" ] > /dev/null 2>&1
 	then
 	
-		sudo umount ~/Mounts > /dev/null 2>&1
+		sudo umount ~/Mounts/Mounted > /dev/null 2>&1
 		drive_directory="none"
 		echo ""
 		echo "Operation complete."		
@@ -74,7 +74,7 @@ do
 	#The program is terminated
 	elif [ $command_input = "exit" ] > /dev/null 2>&1
 	then
-		sudo umount ~/Mounts > /dev/null 2>&1
+		sudo umount ~/Mounts/Mounted > /dev/null 2>&1
 		exit 0
 
 	#Lists all open usb ports
@@ -90,7 +90,7 @@ do
 		then
 			echo ""
 			echo "To get to the usb, press ctrl+alt+t"
-			echo "and type into your terminal \"cd ~/Mounts/\"."
+			echo "and type into your terminal \"cd ~/Mounts/Mounted/\"."
 		else
 			echo ""
 			echo "There is no mounted drive."
